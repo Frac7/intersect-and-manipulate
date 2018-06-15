@@ -34,10 +34,10 @@ The selected object is moved in front of camera using [aframe-alongpath](https:/
 <body>
     <a-scene leap="vr: false" cursor="rayOrigin: mouse">
     <!-- Set hands and control as children of camera !-->
-        <a-entity camera="near: 0.01" look-controls position="0 1.5 0">
-            <a-entity leap-hand="hand: left; holdDistance: 0.5"></a-entity>
-            <a-entity leap-hand="hand: right; holdDistance: 0.5"></a-entity>
-            <a-entity intersect-and-manipulate></a-entity>
+        <a-entity camera="near: 0.01" look-controls wasd-controls position="0 1.5 0">
+        <a-entity leap-hand="hand: left; holdDistance: 0.5" position="0 -0.25 -0.5"></a-entity>
+        <a-entity leap-hand="hand: right; holdDistance: 0.5" position="0 -0.25 -0.5"></a-entity>
+        <a-entity intersect-and-manipulate></a-entity>
         </a-entity>
     </a-scene>
 </body>
