@@ -1,5 +1,5 @@
 let firstHandPosition = null; //posizione della mano nel momento in cui viene chiamato l'evento leap-holdstart
-let start = false; //indica se l'evento sia stato emesso o meno
+let holdStart = false; //indica se l'evento sia stato emesso o meno
 let target = null; //oggetto da trasformare
 let hand = null; //mano che innesca l'evento
 let targetOriginalValue = null; //valore iniziale del target per somma (posizione, scala, rotazione)
@@ -52,7 +52,7 @@ AFRAME.registerComponent('holdable', {
     },
 
     tick: function () {
-        if (start) {
+        if (holdStart) {
             if (axis !== null) {
                 //selezione posizione mano in base all'asse
                 selectHand();
@@ -187,7 +187,7 @@ AFRAME.registerComponent('holdable', {
             hand = e.detail.hand;
             firstHandPosition = e.detail.hand.pointables[0].tipPosition;
             //assegnato target dallo script componente
-            start = true;
+            holdStart = true;
             document.querySelector('#' + axis).setAttribute('material', {
                 color: '#ffff00'
             });
@@ -208,7 +208,7 @@ AFRAME.registerComponent('holdable', {
 
     onHoldStop: function () {
         //l'evento emesso è stato "stoppato"
-        start = false;
+        holdStart = false;
         //assegnamento colore precedente
         document.querySelector('#' + axis).setAttribute('material', {
             color: oldColor()
