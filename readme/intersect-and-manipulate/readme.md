@@ -12,8 +12,8 @@ that intersects the pointed object.
 
 ![Example1](https://github.com/Frac7/Tirocinio/blob/master/readme/intersect-and-manipulate/gif1.gif)
 
-The selected object is moved in front of camera using [aframe-alongpath](https://github.com/protyze/aframe-alongpath-component)
- and transform control is attached to it.
+The selected object is moved in front of the camera using [aframe-alongpath](https://github.com/protyze/aframe-alongpath-component)
+ and the transform control is attached to it.
  
 ![Example2](https://github.com/Frac7/Tirocinio/blob/master/readme/intersect-and-manipulate/gif.gif)
  
